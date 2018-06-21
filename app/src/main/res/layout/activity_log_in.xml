@@ -33,37 +33,36 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="4.5"
             android:background="@drawable/logo_white"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"/>
+            android:layout_marginBottom="35dp"/>
 
         <EditText
             android:id="@+id/txtUsername"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="1.2"
             android:ems="10"
             android:hint="Username"
             android:inputType="text"
-            android:textSize="16dp"
-            android:padding="5dp"
+            android:textSize="14dp"
+            android:padding="10dp"
             android:background="@color/White"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="15dp"/>
 
 
         <EditText
             android:id="@+id/txtPassword"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_weight="1.2"
             android:background="@color/White"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
-            android:layout_marginBottom="35dp"
-            android:textSize="16dp"
-            android:padding="5dp"/>
+            android:textSize="14dp"
+            android:padding="10dp"/>
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -71,12 +70,10 @@
             android:layout_weight="1"
             app:cardBackgroundColor="@color/Orange"
             app:cardCornerRadius="20dp"
-            app:cardElevation="10dp"
             android:id="@+id/loginCardView"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="55dp">
 
             <RelativeLayout
-
                 android:layout_width="match_parent"
 
                 android:layout_height="match_parent">
@@ -95,7 +92,9 @@
 
                     android:textColor="@color/White"
 
-                    android:textSize="18sp" />
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
+
             </RelativeLayout>
         </android.support.v7.widget.CardView>
 
