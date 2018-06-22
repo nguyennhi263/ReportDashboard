@@ -9,18 +9,23 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.HashMap;
 
 import vn.com.ifca.reportdashboard.Activities.LogInActivity;
 import vn.com.ifca.reportdashboard.Model.Database;
+import vn.com.ifca.reportdashboard.Model.IP4V;
 
 public class MainActivity extends AppCompatActivity {
-    Database urlDb;
+    IP4V link;
+    HashMap<String, String> ip;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        urlDb = new Database(this);
+        link = new IP4V(getApplicationContext());
 
     }
     @Override
@@ -51,30 +56,39 @@ public class MainActivity extends AppCompatActivity {
                 final Dialog dialogContractor = new Dialog(MainActivity.this);
                 dialogContractor.setContentView(R.layout.url_options);
                 dialogContractor.setCancelable(true);
-
-                // Cancel
+                // initial
                 Button cancelBtn = (Button) dialogContractor.findViewById(R.id.cancel_url);
+                final Button urlBtn = dialogContractor.findViewById(R.id.ok_url_entry);
+                final EditText urtText = (EditText) dialogContractor.findViewById(R.id.url_entry) ;
+                //get url in db
+                ip = link.getIP();
+                final String URL = ip.get(link.KEY_URL);
+                urtText.setText(URL);
+
+               // Save Event
+                urlBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (urlBtn.getText().toString().equals("")) {
+
+                        }
+                        else
+                        {
+                            final String urlText = urtText.getText().toString();
+                            link.add_KEYURL(urlText);
+                            Toast.makeText(getApplicationContext(), "Updated URL", Toast.LENGTH_SHORT).show();
+                            dialogContractor.dismiss();
+                        }
+
+                    }
+                });
+                // Cancel
                 cancelBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         dialogContractor.dismiss();
                     }
                 });
-                final Button urlBtn = dialogContractor.findViewById(R.id.ok_url_entry);
-                urlBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        boolean isInserted;
-                        if (urlBtn.getText().toString().equals(""))
-                            isInserted = (urlDb.insertData("http://demo.ifca.com.vn"));
-                        else
-                            isInserted = (urlDb.insertData(urlBtn.getText().toString()));
-                        if (!isInserted) {
-                            Toast.makeText(getApplicationContext(), "Error: Unable to Add URL!", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
                 dialogContractor.show();
                 break;
             case R.id.nav_logout:

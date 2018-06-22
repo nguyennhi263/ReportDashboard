@@ -49,7 +49,7 @@ public class LogInActivity extends AppCompatActivity {
                     Toast.makeText(LogInActivity.this, "Enter your password!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "Hello " + username + "!", Toast.LENGTH_SHORT).show();
-                    new checkLogIn();
+                   // new checkLogIn();
                 }
             }
         });
@@ -57,7 +57,7 @@ public class LogInActivity extends AppCompatActivity {
 
     //To be majorly edited by uncle google, as this is just a basic design
     //Also if you don't like the progress bar, just delete it. It's in activity_log_in.xml.
-    private class checkLogIn extends AsyncTask<String, void, String> {
+   /* private class checkLogIn extends AsyncTask<String, void, String> {
         String username = user.getText().toString();
         String password = user.getText().toString();
 
@@ -77,9 +77,10 @@ public class LogInActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result){
             super.onPostExecute(result);
-            if (result.equals("false"))
-                Toast.makeText(LogInActivity.this,"Invalid password or username",Toast.LENGTH_SHORT).show();
+            if (result.equals("false")) {
+                Toast.makeText(LogInActivity.this, "Invalid password or username", Toast.LENGTH_SHORT).show();
                 pBar.setVisibility(View.INVISIBLE);
+            }
             else{
                 // Create a session for the specific user using username n stuff
                 pBar.setVisibility(View.INVISIBLE);
@@ -90,7 +91,7 @@ public class LogInActivity extends AppCompatActivity {
 
         }
     }
-
+*/
 
     /*
     //Some Database nonsense. Can only be used once the proper settings are included.
