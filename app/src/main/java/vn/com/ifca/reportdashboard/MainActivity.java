@@ -2,6 +2,10 @@ package vn.com.ifca.reportdashboard;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -10,4 +14,42 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.sidebar, menu);
+        return true;
+    }
+    @Override
+    public
+    boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // action with ID action_refresh was
+            case R.id.nav_dashboard:
+                Toast.makeText(this,
+                        "Dashboard"
+                        , Toast.LENGTH_SHORT)
+                        .show();
+                break;
+            // action with ID action_settings was
+            case R.id.nav_setting:
+                Toast.makeText(this,
+                        "Setting"
+                        , Toast.LENGTH_SHORT)
+                        .show();
+                break;
+            case R.id.nav_logout:
+                Toast.makeText(this,
+                        "Logout"
+                        , Toast.LENGTH_SHORT)
+                        .show();
+                break;
+            default:
+                break;
+
+        }
+
+        return true;
+    }
+
 }
