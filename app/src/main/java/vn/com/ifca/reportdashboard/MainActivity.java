@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
                         .show();
                 break;
             // action with ID action_settings was
-            case R.id.nav_setting:
+            case R.id.nav_language:
                 Toast.makeText(this,
-                        "Setting"
+                        "Dashboard"
                         , Toast.LENGTH_SHORT)
                         .show();
                 break;
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
                         , Toast.LENGTH_SHORT)
                         .show();
                 break;
+
             default:
                 break;
 
