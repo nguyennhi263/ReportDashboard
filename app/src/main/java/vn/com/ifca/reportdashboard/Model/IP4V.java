@@ -24,26 +24,21 @@ public class IP4V {
 
     // Sharedpref file name
     private static final String PREF_NAME = "TestAPI";
-    public static final String KEY_GET = "IP_GET";
-    public static final String KEY_POST ="IP_POST";
+    public static final String KEY_URL ="IP_POST";
     // Constructor
     public IP4V(Context context){
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
     }
-    public void add_KEYGET (String ip){
-        editor.putString(KEY_GET,ip);
-        editor.commit();
-    }
+
     public void add_KEYPOST (String ip){
-        editor.putString(KEY_POST,ip);
+        editor.putString(KEY_URL,ip);
         editor.commit();
     }
     public HashMap<String, String> getIP(){
         HashMap<String, String> defect = new HashMap<String, String>();
-        defect.put(KEY_GET,pref.getString(KEY_GET,null));
-        defect.put(KEY_POST,pref.getString(KEY_POST,null));
+        defect.put(KEY_URL,pref.getString(KEY_URL,null));
         return defect;
     }
     public void clear(){
