@@ -70,7 +70,8 @@
             android:layout_weight="1"
             app:cardBackgroundColor="@color/Orange"
             app:cardCornerRadius="20dp"
-            android:id="@+id/loginCardView"
+
+            android:id="@+id/LoginBtn"
             android:layout_marginTop="55dp">
 
             <RelativeLayout
