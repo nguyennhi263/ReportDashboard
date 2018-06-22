@@ -5,26 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="vn.com.ifca.reportdashboard.MainActivity"
-    android:weightSum="12"
+    android:weightSum="1"
     android:orientation="vertical"
     android:background="@color/Black">
 
-
-<<<<<<< HEAD
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="11">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:weightSum="4"
+            android:weightSum="5"
             android:background="@color/Black">
 
             <ImageButton
-                android:id="@+id/graph2"
+                android:id="@+id/graph1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -71,10 +70,6 @@
                 android:layout_marginRight="25dp"
                 android:layout_marginLeft="25dp"
                 android:background="@color/LighterOrange"/>
-
-
         </LinearLayout>
     </ScrollView>
-=======
->>>>>>> 6cc8859e25bb833891c9f4708702fbbdb4c76bad
 </LinearLayout>
