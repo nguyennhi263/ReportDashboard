@@ -12,14 +12,17 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import vn.com.ifca.reportdashboard.Activities.LogInActivity;
+import vn.com.ifca.reportdashboard.Model.Database;
 
 public class MainActivity extends AppCompatActivity {
-
+    Database urlDb;
+    Button url;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //startActivity(new Intent(MainActivity.this, LogInActivity.class));
+        urlDb = new Database(this);
+        url = findViewById(R.id.url_entry);
 
     }
     @Override
@@ -29,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
     @Override
-    public
-    boolean onOptionsItemSelected(MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             // action with ID action_refresh was
             case R.id.nav_dashboard:
@@ -60,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
                         dialogContractor.dismiss();
                     }
                 });
+                Button urlBtn = dialogContractor.findViewById(R.id.ok_url_entry);
+                urlBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isInserted = (urlDb.insertData( url.getText().toString() ));
+                        if (!isInserted){
+                            Toast.makeText(this, "Error: Unable to Add URL!", Toast.LENGTH_SHORT).show();
+                        }
+                });
 
                 dialogContractor.show();
                 break;
@@ -77,5 +88,4 @@ public class MainActivity extends AppCompatActivity {
 
         return true;
     }
-
 }
