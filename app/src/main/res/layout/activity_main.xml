@@ -5,16 +5,84 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="vn.com.ifca.reportdashboard.MainActivity"
-    android:weightSum="12"
+    android:weightSum="10"
     android:orientation="vertical"
     android:background="@color/Black">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Dashboard Report"
+        android:textColor="@color/White"
+        android:textStyle="bold"
+        android:background="@color/LighterOrange"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:textSize="14dp"/>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
         android:layout_weight="11">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></LinearLayout>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="5"
+            android:background="@color/Black"
+            android:layout_marginTop="20dp">
+
+            <ImageButton
+                android:id="@+id/graph1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/sample_graph1"
+                android:padding="20dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"/>
+
+            <TextView
+                android:id="@+id/graph1_name"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Graph 1"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="@color/Orange"/>
+
+            <ImageButton
+                android:id="@+id/graph2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/sample_graph2"
+                android:padding="20dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="50dp"/>
+
+            <TextView
+                android:id="@+id/graph2_name"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:text="Graph 2"
+                android:textSize="15dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/White"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:background="@color/Orange"/>
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>
