@@ -32,7 +32,7 @@ public class IP4V {
         editor = pref.edit();
     }
 
-    public void add_KEYPOST (String ip){
+    public void add_KEYURL (String ip){
         editor.putString(KEY_URL,ip);
         editor.commit();
     }

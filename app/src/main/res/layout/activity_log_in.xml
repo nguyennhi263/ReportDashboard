@@ -44,7 +44,7 @@
             android:layout_height="0dp"
             android:layout_weight="1.2"
             android:ems="10"
-            android:hint="Username"
+            android:hint="@string/logInUsernameHint"
             android:inputType="text"
             android:textSize="14dp"
             android:padding="10dp"
@@ -59,7 +59,7 @@
             android:layout_weight="1.2"
             android:background="@color/White"
             android:ems="10"
-            android:hint="Password"
+            android:hint="@string/logInPasswordHint"
             android:inputType="textPassword"
             android:textSize="14dp"
             android:padding="10dp"/>
@@ -89,12 +89,21 @@
 
                     android:layout_centerInParent="true"
 
-                    android:text="Login"
+                    android:text="@string/logInBtn"
 
                     android:textColor="@color/White"
 
                     android:textSize="16sp"
                     android:textStyle="bold"/>
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    style="?android:attr/progressBarStyle"
+                    android:indeterminate="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true" />
 
             </RelativeLayout>
         </android.support.v7.widget.CardView>

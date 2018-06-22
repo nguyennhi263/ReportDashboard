@@ -1,13 +1,21 @@
 package vn.com.ifca.reportdashboard.Activities;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.database.Cursor;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import java.net.URL;
+
+import vn.com.ifca.reportdashboard.MainActivity;
 import vn.com.ifca.reportdashboard.Model.Database;
 import vn.com.ifca.reportdashboard.R;
 
@@ -17,6 +25,7 @@ public class LogInActivity extends AppCompatActivity {
     private CardView LoginBtn;
     private String username;
     private String password;
+    ProgressBar pBar;
     Database loginDb;
 
     @Override
@@ -27,6 +36,8 @@ public class LogInActivity extends AppCompatActivity {
         pass = findViewById(R.id.txtPassword);
         LoginBtn = findViewById(R.id.LoginBtn);
         loginDb = new Database(this);
+        pBar = findViewById(R.id.progress);
+        pBar.setVisibility(View.INVISIBLE);
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,10 +49,49 @@ public class LogInActivity extends AppCompatActivity {
                     Toast.makeText(LogInActivity.this, "Enter your password!", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "Hello " + username + "!", Toast.LENGTH_SHORT).show();
+                   // new checkLogIn();
                 }
             }
         });
     }
+
+    //To be majorly edited by uncle google, as this is just a basic design
+    //Also if you don't like the progress bar, just delete it. It's in activity_log_in.xml.
+   /* private class checkLogIn extends AsyncTask<String, void, String> {
+        String username = user.getText().toString();
+        String password = user.getText().toString();
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+            pBar.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        protected String doInBackground(String... params){
+
+            //code that checks username and password match and if correct, return user ID or something. If not, run below.
+            return "false";
+        }
+
+        @Override
+        protected void onPostExecute(String result){
+            super.onPostExecute(result);
+            if (result.equals("false")) {
+                Toast.makeText(LogInActivity.this, "Invalid password or username", Toast.LENGTH_SHORT).show();
+                pBar.setVisibility(View.INVISIBLE);
+            }
+            else{
+                // Create a session for the specific user using username n stuff
+                pBar.setVisibility(View.INVISIBLE);
+                finish();
+                Intent it = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(it);
+            }
+
+        }
+    }
+*/
 
 
     /*
