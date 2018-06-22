@@ -16,13 +16,11 @@ import vn.com.ifca.reportdashboard.Model.Database;
 
 public class MainActivity extends AppCompatActivity {
     Database urlDb;
-    Button url;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         urlDb = new Database(this);
-        url = findViewById(R.id.url_entry);
 
     }
     @Override
@@ -62,14 +60,19 @@ public class MainActivity extends AppCompatActivity {
                         dialogContractor.dismiss();
                     }
                 });
-                Button urlBtn = dialogContractor.findViewById(R.id.ok_url_entry);
+                final Button urlBtn = dialogContractor.findViewById(R.id.ok_url_entry);
                 urlBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean isInserted = (urlDb.insertData( url.getText().toString() ));
-                        if (!isInserted){
-                            Toast.makeText(this, "Error: Unable to Add URL!", Toast.LENGTH_SHORT).show();
+                        boolean isInserted;
+                        if (urlBtn.getText().toString().equals(""))
+                            isInserted = (urlDb.insertData("http://demo.ifca.com.vn"));
+                        else
+                            isInserted = (urlDb.insertData(urlBtn.getText().toString()));
+                        if (!isInserted) {
+                            Toast.makeText(getApplicationContext(), "Error: Unable to Add URL!", Toast.LENGTH_SHORT).show();
                         }
+                    }
                 });
 
                 dialogContractor.show();
