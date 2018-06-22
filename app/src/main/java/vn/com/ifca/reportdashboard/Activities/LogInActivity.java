@@ -57,7 +57,11 @@ public class LogInActivity extends AppCompatActivity {
 
     //To be majorly edited by uncle google, as this is just a basic design
     //Also if you don't like the progress bar, just delete it. It's in activity_log_in.xml.
+<<<<<<< HEAD
    /* private class checkLogIn extends AsyncTask<String, void, String> {
+=======
+    private class checkLogIn extends AsyncTask<String, Void, String> {
+>>>>>>> 88d86903cc6aec44ca9faa659f7f08c0563c064d
         String username = user.getText().toString();
         String password = user.getText().toString();
 
@@ -68,7 +72,7 @@ public class LogInActivity extends AppCompatActivity {
         }
 
         @Override
-        protected String doInBackground(String username, String password){
+        protected String doInBackground(String... params){
 
             //code that checks username and password match and if correct, return user ID or something. If not, run below.
             return "false";
@@ -92,6 +96,7 @@ public class LogInActivity extends AppCompatActivity {
         }
     }
 */
+
 
     /*
     //Some Database nonsense. Can only be used once the proper settings are included.
