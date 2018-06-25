@@ -27,23 +27,33 @@
             android:textStyle="bold"
             tools:drawableBottom="@color/Orange"/>
 
-        <RadioButton
-            android:id="@+id/vietnamese_language_option"
+        <RadioGroup
+            android:id="@+id/languageSelection"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tiếng Việt"
-            android:buttonTint="@color/Orange"
-            android:textSize="14sp"
-            android:textStyle="bold" />
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
 
-        <RadioButton
-            android:id="@+id/_language_option"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:buttonTint="@color/Orange"
-            android:text="English"
-            android:textStyle="bold"
-            android:textSize="14sp"/>
+            <RadioButton
+                android:id="@+id/english_language_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/Orange"
+                android:text="English"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/vietnamese_language_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:buttonTint="@color/Orange"
+                android:text="Tiếng Việt"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </RadioGroup>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -5,12 +5,12 @@ import android.os.Bundle;
 
 import vn.com.ifca.reportdashboard.R;
 
+    public class ReportDetailActivity extends AppCompatActivity {
 
-public class ReportDetailActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_report_detail);
-    }
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_report_detail);
+        }
 }
+
