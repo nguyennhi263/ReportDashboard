@@ -1,34 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<<<<<<< HEAD
     <item
         android:id="@+id/nav_dashboard"
+        android:icon="@drawable/ic_dehaze_black_24dp"
         android:title="@string/menuDashboard"
-        android:visible="true"
-        android:icon="@drawable/logo_white"
-        app:showAsAction="withText"/>
-=======
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/nav_dashboard"
-        android:orderInCategory="100"
-        android:title="Dashboard"
-        app:showAsAction="never" />
->>>>>>> 43b584b603b6d521edd68bf1191bcc8399858175
+        app:showAsAction="never"/>
 
     <item android:id="@+id/nav_language"
-        android:orderInCategory="100"
-        android:title="Language"
+        android:title="@string/menuLanguage"
         app:showAsAction="never"/>
 
     <item android:id="@+id/nav_url"
-        android:orderInCategory="100"
-        android:title="URL"
+        android:title="@string/url"
         app:showAsAction= "never"/>
 
     <item android:id="@+id/nav_logout"
-        android:orderInCategory="100"
-        android:title="Log Out"
+        android:title="@string/menuLogOut"
         app:showAsAction="never"/>
 
 
