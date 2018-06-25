@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:layout_editor_absoluteY="81dp"
-    android:minWidth="270dp"
-   >
+    android:minWidth="270dp">
 
     <LinearLayout
         android:layout_margin="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="3"
+        android:weightSum="12"
         android:background="#CCCCCC"
         android:orientation="vertical">
 
@@ -20,7 +19,7 @@
             android:id="@+id/languageOptions"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
+            android:layout_weight="3"
             android:padding="8dp"
             android:text="@string/languageBtn"
             android:textAlignment="center"
@@ -34,7 +33,7 @@
             android:id="@+id/languageSelection"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" >
+            android:layout_weight="6" >
 
             <RadioButton
                 android:id="@+id/english_language_option"
@@ -66,7 +65,7 @@
             android:background="@color/White"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
+            android:layout_weight="3"
             android:weightSum="2"
             android:orientation="horizontal"
             android:layout_margin="0dp">
