@@ -9,8 +9,8 @@
         android:id="@+id/nav_dashboard"
         android:title="@string/menuDashboard"
         android:visible="true"
-
-        android:icon="@drawable/sample_graph1" />
+        android:icon="@drawable/logo_white"
+        app:showAsAction="withText"/>
 
     <item android:id="@+id/nav_language"
         android:title="@string/menuLanguage"
