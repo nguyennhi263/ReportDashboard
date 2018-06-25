@@ -5,9 +5,9 @@
     <string name="logInBtn">Login</string>
     <string name="languageBtn">Language Options</string>
     <string name="Cancel">Cancel</string>
-    <string name="OK">OK</string>
-    <string name="url">URL</string>
-    <string name="urlTextEdit">Enter Destination</string>
+    <string name="OK" translatable="false">OK</string>
+    <string name="url" translatable="false">URL</string>
+    <string name="urlTextEdit">Enter URL</string>
     <string name="menuDashboard">Dashboard</string>
     <string name="menuLanguage">Language</string>
     <string name="menuLogOut">Log Out</string>
