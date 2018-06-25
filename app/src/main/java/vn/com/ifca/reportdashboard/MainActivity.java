@@ -57,38 +57,36 @@ public class MainActivity extends AppCompatActivity {
                 final Dialog languageContractor = new Dialog(MainActivity.this);
                 languageContractor.setContentView(R.layout.language_options);
                 languageContractor.setCancelable(true);
-                Button cancelBtn = findViewById(R.id.cancel_language);
-                Button okBtn = findViewById(R.id.confirm_language);
-                final Boolean[] exit = {false};
-                RadioGroup languageChoice = findViewById(R.id.languageSelection);
-                while (!exit[0]) {
-                    int radioBtnId = languageChoice.getCheckedRadioButtonId();
-                    final RadioButton chosen = findViewById(radioBtnId);
-                    okBtn.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            if (chosen.getText().toString().equals("")) {
-                                Toast.makeText(getApplicationContext(), "@string/languageWarning", Toast.LENGTH_SHORT).show();
-                            } else if (chosen.getText().toString().equals("English")) {
-
-                                languageContractor.dismiss();
-                                exit[0] = true;
-                            } else {
-                                languageContractor.dismiss();
-                                exit[0] = true;
-                            }
-
+                Button cancelBtn = languageContractor.findViewById(R.id.cancel_language);
+                final Button okBtn = languageContractor.findViewById(R.id.confirm_language);
+                final RadioButton english = languageContractor.findViewById(R.id.english_language_option);
+                final RadioButton viet = languageContractor.findViewById(R.id.vietnamese_language_option);
+                okBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (english.isChecked() == false && viet.isChecked() == false) {
+                            Toast.makeText(getApplicationContext(), "@string/languageWarning", Toast.LENGTH_SHORT).show();
                         }
-                    });
+                        else if (english.isChecked()) {
+                            
+                            languageContractor.dismiss();
+                        }
+                        else {
+                            languageContractor.dismiss();
+                        }
+                        }
+
+
+                        });
                     // Cancel
                     cancelBtn.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             languageContractor.dismiss();
-                            exit[0] = true;
                         }
                     });
-                }
+
+                languageContractor.show();
                 break;
 
                 case R.id.nav_url:
@@ -139,5 +137,9 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 return true;
+        }
+        public void changeLanguage (Resources res, String locale)
+        {
+
         }
     }
