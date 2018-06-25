@@ -3,23 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/nav_dashboard"
-        android:icon="@drawable/ic_dehaze_black_24dp"
-        android:title="@string/menuDashboard"
-        app:showAsAction="never"/>
+    <group
+        app:showAsAction="never">
 
-    <item android:id="@+id/nav_language"
-        android:title="@string/menuLanguage"
-        app:showAsAction="never"/>
+        <item
+            android:id="@+id/nav_dashboard"
+            android:title="@string/menuDashboard"/>
 
-    <item android:id="@+id/nav_url"
-        android:title="@string/url"
-        app:showAsAction= "never"/>
+        <item android:id="@+id/nav_language"
+            android:title="@string/menuLanguage"/>
 
-    <item android:id="@+id/nav_logout"
-        android:title="@string/menuLogOut"
-        app:showAsAction="never"/>
+        <item android:id="@+id/nav_url"
+            android:title="@string/url"/>
+
+        <item android:id="@+id/nav_logout"
+            android:title="@string/menuLogOut"/>
+    </group>
 
 
 
