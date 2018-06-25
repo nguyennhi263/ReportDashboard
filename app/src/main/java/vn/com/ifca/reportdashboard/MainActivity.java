@@ -45,11 +45,13 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.sidebar, menu);
+
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
             // action with ID action_refresh was
             case R.id.nav_dashboard:
@@ -119,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                             } else {
                                 final String urlText = urtText.getText().toString();
                                 link.add_KEYURL(urlText);
-                                Toast.makeText(getApplicationContext(), "Updated URL", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "@string/updateURL", Toast.LENGTH_SHORT).show();
                                 dialogContractor.dismiss();
                             }
 

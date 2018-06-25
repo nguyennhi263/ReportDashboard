@@ -37,11 +37,11 @@ public class LogInActivity extends AppCompatActivity {
                 username = user.getText().toString();
                 password = pass.getText().toString();
                 if (TextUtils.isEmpty(username)) {
-                    Toast.makeText(LogInActivity.this, "Enter your username!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LogInActivity.this, "@string/logInToastUsername", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(LogInActivity.this, "Enter your password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LogInActivity.this, "@string/logInToastPassword", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Hello " + username + "!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "@string/logInSuccess" + username + "!", Toast.LENGTH_SHORT).show();
                    // new checkLogIn();
                 }
             }

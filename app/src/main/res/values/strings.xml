@@ -11,4 +11,9 @@
     <string name="menuDashboard">Dashboard</string>
     <string name="menuLanguage">Language</string>
     <string name="menuLogOut">Log Out</string>
+
+    <string name="logInToastUsername">Enter your username!</string>
+    <string name="logInToastPassword">Enter your password!</string>
+    <string name="logInSuccess">Hello </string>
+    <string name="updateURL">Updated URL</string>
 </resources>

@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Bảng báo cáo</string>
+    <string name="logInUsernameHint">Tên đăng nhập</string>
     <string name="logInPasswordHint">Mật mã</string>
+    <string name="logInBtn">Đăng nhập</string>
+    <string name="languageBtn">Ngôn ngữ</string>
     <string name="Cancel">Huỷ</string>
     <string name="OK">OK</string>
     <string name="url">URL</string>
@@ -8,7 +11,6 @@
     <string name="menuDashboard">Báo cáo</string>
     <string name="menuLanguage">Ngôn ngữ</string>
     <string name="menuLogOut">Đăng xuất</string>
-    <string name="logInUsernameHint">Tên đăng nhập</string>
-    <string name="languageBtn">Ngôn ngữ</string>
-    <string name="logInBtn">Đăng nhập</string>
+
+
 </resources>
