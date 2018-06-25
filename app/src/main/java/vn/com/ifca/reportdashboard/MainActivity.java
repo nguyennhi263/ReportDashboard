@@ -47,7 +47,13 @@ public class MainActivity extends AppCompatActivity {
             // action with ID action_settings was
             case R.id.nav_language:
                 Toast.makeText(this,
-                        "Dashboard"
+                        "Language"
+                        , Toast.LENGTH_SHORT)
+                        .show();
+                break;
+            case R.id.nav_url:
+                Toast.makeText(this,
+                        "URL"
                         , Toast.LENGTH_SHORT)
                         .show();
 
