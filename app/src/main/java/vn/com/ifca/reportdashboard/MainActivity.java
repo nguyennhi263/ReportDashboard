@@ -1,7 +1,7 @@
 package vn.com.ifca.reportdashboard;
 
 import android.app.Dialog;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,13 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import java.util.HashMap;
 
-import vn.com.ifca.reportdashboard.Activities.LogInActivity;
-import vn.com.ifca.reportdashboard.Model.Database;
 import vn.com.ifca.reportdashboard.Model.IP4V;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -26,12 +23,21 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     IP4V link;
     HashMap<String, String> ip;
-
+    private SharedPreferences langPreferences;
+    private String sharedPrefFile = "vn.com.ifca.reportdashboard";
+    private String currentLocale;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        langPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
+        String setLang = langPreferences.getString("language", "toast");
+        if (!(setLang.equals("toast"))){
+            Resources res = this.getResources();
+            changeLanguage(res, setLang);
+        }
         link = new IP4V(getApplicationContext());
+
 
     }
 
@@ -151,6 +157,11 @@ public class MainActivity extends AppCompatActivity {
                     config.locale = new Locale("vi");
                     break;
             }
+            SharedPreferences.Editor preferencesEditor = langPreferences.edit();
+            preferencesEditor.clear();
+            preferencesEditor.putString("language", locale);
+            preferencesEditor.apply();
             res.updateConfiguration(config, res.getDisplayMetrics());
+
         }
     }
