@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">Report Dashboard</string>
-    <string name="logInUsernameHint">Username</string>
-    <string name="logInPasswordHint">Password</string>
-    <string name="logInBtn">Login</string>
-    <string name="languageBtn">Language Options</string>
-    <string name="Cancel">Cancel</string>
+    <string name="app_name">Bảng báo cáo</string>
+    <string name="logInPasswordHint">Mật mã</string>
+    <string name="Cancel">Huỷ</string>
     <string name="OK">OK</string>
     <string name="url">URL</string>
-    <string name="urlTextEdit">Enter Destination</string>
-    <string name="menuDashboard">Dashboard</string>
-    <string name="menuLanguage">Language</string>
-    <string name="menuLogOut">Log Out</string>
+    <string name="urlTextEdit">Điền Vào Đường Dẫn URL</string>
+    <string name="menuDashboard">Bảng</string>
+    <string name="menuLanguage">Ngôn ngữ</string>
+    <string name="menuLogOut">Đăng xuất</string>
+    <string name="logInUsernameHint">Tên đăng nhập</string>
+    <string name="languageBtn">Ngôn ngữ</string>
+    <string name="logInBtn">Đăng nhập</string>
 </resources>
