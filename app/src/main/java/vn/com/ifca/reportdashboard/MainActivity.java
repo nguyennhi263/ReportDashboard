@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             // action with ID action_settings was
             case R.id.nav_language:
+                final Resources res = this.getResources();
                 final Dialog languageContractor = new Dialog(MainActivity.this);
                 languageContractor.setContentView(R.layout.language_options);
                 languageContractor.setCancelable(true);
@@ -68,10 +69,11 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "@string/languageWarning", Toast.LENGTH_SHORT).show();
                         }
                         else if (english.isChecked()) {
-                            
+                            changeLanguage(res, "en");
                             languageContractor.dismiss();
                         }
                         else {
+                            changeLanguage(res, "vi");
                             languageContractor.dismiss();
                         }
                         }
@@ -140,6 +142,15 @@ public class MainActivity extends AppCompatActivity {
         }
         public void changeLanguage (Resources res, String locale)
         {
-
+            Configuration config = new Configuration(res.getConfiguration());
+            switch(locale) {
+                case "en":
+                    config.locale = new Locale("en");
+                    break;
+                case "vi":
+                    config.locale = new Locale("vi");
+                    break;
+            }
+            res.updateConfiguration(config, res.getDisplayMetrics());
         }
     }
