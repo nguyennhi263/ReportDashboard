@@ -4,8 +4,8 @@
     <string name="Cancel">Huỷ</string>
     <string name="OK">OK</string>
     <string name="url">URL</string>
-    <string name="urlTextEdit">Điền Vào Đường Dẫn URL</string>
-    <string name="menuDashboard">Bảng</string>
+    <string name="urlTextEdit">Đường Dẫn URL</string>
+    <string name="menuDashboard">Báo cáo</string>
     <string name="menuLanguage">Ngôn ngữ</string>
     <string name="menuLogOut">Đăng xuất</string>
     <string name="logInUsernameHint">Tên đăng nhập</string>
