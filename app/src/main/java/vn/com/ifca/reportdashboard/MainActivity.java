@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         link = new IP4V(getApplicationContext());
-
+        startActivity(new Intent(this,LogInActivity.class));
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -51,13 +51,7 @@ public class MainActivity extends AppCompatActivity {
                         , Toast.LENGTH_SHORT)
                         .show();
                 break;
-            case R.id.nav_url:
-                Toast.makeText(this,
-                        "URL"
-                        , Toast.LENGTH_SHORT)
-                        .show();
 
-                break;
             case R.id.nav_url:
                 final Dialog dialogContractor = new Dialog(MainActivity.this);
                 dialogContractor.setContentView(R.layout.url_options);
