@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
                 languageContractor.setCancelable(true);
                 Button cancelBtn = findViewById(R.id.cancel_language);
                 Button okBtn = findViewById(R.id.confirm_language);
-                boolean exit = false;
+                final Boolean[] exit = {false};
                 RadioGroup languageChoice = findViewById(R.id.languageSelection);
-                while (!exit) {
+                while (!exit[0]) {
                     int radioBtnId = languageChoice.getCheckedRadioButtonId();
                     final RadioButton chosen = findViewById(radioBtnId);
                     okBtn.setOnClickListener(new View.OnClickListener() {
@@ -72,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
                             } else if (chosen.getText().toString().equals("English")) {
 
                                 languageContractor.dismiss();
-                                exit = true;
+                                exit[0] = true;
                             } else {
                                 languageContractor.dismiss();
-                                exit = true;
+                                exit[0] = true;
                             }
 
                         }
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             languageContractor.dismiss();
-                            exit = true;
+                            exit[0] = true;
                         }
                     });
                 }

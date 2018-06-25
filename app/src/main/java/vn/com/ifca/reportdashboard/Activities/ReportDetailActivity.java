@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import vn.com.ifca.reportdashboard.R;
 
-public class SettingActivity extends AppCompatActivity {
     public class ReportDetailActivity extends AppCompatActivity {
 
         @Override
@@ -14,4 +13,4 @@ public class SettingActivity extends AppCompatActivity {
             setContentView(R.layout.activity_report_detail);
         }
 }
-}
+
