@@ -12,20 +12,22 @@
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:weightSum="3"
-        android:background="@color/White"
+        android:background="#CCCCCC"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/languageOptions"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:padding="8dp"
             android:text="@string/languageBtn"
             android:textAlignment="center"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold"
-            tools:drawableBottom="@color/Orange"/>
+            tools:drawableBottom="@color/Orange"
+            android:background="@color/White"
+            android:layout_marginBottom="2dp"/>
 
         <RadioGroup
             android:id="@+id/languageSelection"
@@ -41,7 +43,10 @@
                 android:buttonTint="@color/Orange"
                 android:text="English"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@color/White"
+                android:layout_marginBottom="1dp"/>
+
 
             <RadioButton
                 android:id="@+id/vietnamese_language_option"
@@ -51,10 +56,13 @@
                 android:buttonTint="@color/Orange"
                 android:text="Tiếng Việt"
                 android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:background="@color/White"
+                android:layout_marginBottom="1dp"/>
         </RadioGroup>
 
         <LinearLayout
+            android:background="@color/White"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:weightSum="2"
@@ -63,22 +71,27 @@
             <Button
                 android:id="@+id/cancel_language"
                 android:layout_width="80dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:text="@string/Cancel"
                 android:layout_weight="1"
-                android:textSize="10sp"/>
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/Black"/>
 
             <Button
                 android:id="@+id/confirm_language"
                 android:layout_width="80dp"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
                 android:text="@string/OK"
                 android:layout_weight="1"
-                android:textSize="10sp"/>
+                android:textSize="10sp"
+                android:backgroundTint="@color/Orange"
+                android:textColor="@color/White"
+                android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
 

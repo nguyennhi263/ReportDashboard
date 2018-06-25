@@ -10,58 +10,58 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="16"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:weightSum="16">
+
         <TextView
             android:id="@+id/graph1_title_display"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Graph Title"
+            android:layout_height="30dp"
             android:background="@color/LighterOrange"
+            android:paddingBottom="5dp"
             android:paddingLeft="10dp"
             android:paddingTop="5dp"
-            android:paddingBottom="5dp"
-            android:textStyle="bold"
+            android:text="Graph Title"
             android:textColor="@color/White"
-            android:textSize="14sp"/>
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_weight=""/>
 
         <ImageView
             android:id="@+id/graph1_display"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@drawable/sample_graph1"
-            android:layout_weight="14"/>
+            android:layout_height="255dp"
+            android:layout_weight="15"
+            android:background="@drawable/sample_graph1" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="14"
-            android:orientation="horizontal">
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:weightSum="14">
+
             <Space
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="12"/>
+                android:layout_weight="14" />
+
             <ImageButton
                 android:id="@+id/graph_display_back_button"
-                android:layout_width="0dp"
+                android:layout_width="20dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/arrow_back"
-                android:layout_weight="1"
-                android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/arrow_back" />
 
             <ImageButton
                 android:id="@+id/graph_display_forward_button"
-                android:layout_width="0dp"
+                android:layout_width="20dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/arrow_forward"
-                android:layout_weight="1"
-                android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/arrow_forward" />
         </LinearLayout>
 
     </LinearLayout>

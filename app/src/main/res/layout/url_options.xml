@@ -8,14 +8,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:weightSum="2"
-        android:background="@color/White"
+        android:background="#CCCCCC"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:weightSum="2"
-            android:padding="5dp">
+            android:padding="5dp"
+            android:background="@color/White"
+            android:layout_marginBottom="2dp">
             <TextView
                 android:id="@+id/url_name"
                 android:layout_width="match_parent"
@@ -28,29 +30,31 @@
                 android:background="@color/White"/>
             <EditText
                 android:id="@+id/url_entry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
                 android:ems="10"
                 android:hint="@string/urlTextEdit"
-
                 android:inputType="text"
                 android:textSize="14sp"
                 android:padding="10dp"
-                android:background="@color/White"
+                android:background="@drawable/border9"
                 android:layout_marginLeft="5px"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:weightSum="2"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/White">
+
             <Button
                 android:layout_width="wrap_content"
                 android:id="@+id/cancel_url"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/Cancel"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textStyle="bold"/>
 
             <Button
                 android:id="@+id/ok_url_entry"
@@ -58,7 +62,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/OK"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:backgroundTint="@color/Orange"
+                android:textColor="@color/White"/>
         </LinearLayout>
     </LinearLayout>
 
