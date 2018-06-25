@@ -7,6 +7,10 @@
         app:showAsAction="never">
 
         <item
+            android:id="@+id/nav_disabled"
+            android:checkable="false"
+            android:enabled="false" />
+        <item
             android:id="@+id/nav_dashboard"
             android:title="@string/menuDashboard"/>
 
