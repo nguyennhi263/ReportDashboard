@@ -10,7 +10,7 @@
         android:weightSum="2"
         android:background="#CCCCCC"
         android:orientation="vertical"
-        android:layout_margin="10dp">
+        android:layout_margin="15dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
             android:layout_marginBottom="2dp">
             <TextView
                 android:id="@+id/url_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/url"
                 android:textSize="14sp"
@@ -30,7 +30,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:background="@color/White"
-                android:textColor="@color/Black"/>
+                android:textColor="@color/Black" />
             <EditText
                 android:id="@+id/url_entry"
                 android:layout_width="0dp"
