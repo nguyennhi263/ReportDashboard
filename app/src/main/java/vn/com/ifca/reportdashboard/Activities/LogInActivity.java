@@ -1,15 +1,23 @@
 package vn.com.ifca.reportdashboard.Activities;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
+import vn.com.ifca.reportdashboard.MainActivity;
 import vn.com.ifca.reportdashboard.Model.Database;
+import vn.com.ifca.reportdashboard.Model.IP4V;
 import vn.com.ifca.reportdashboard.R;
 
 public class LogInActivity extends AppCompatActivity {
@@ -18,9 +26,14 @@ public class LogInActivity extends AppCompatActivity {
     private CardView LoginBtn;
     private String username;
     private String password;
+    private ImageButton settingBtn;
     ProgressBar pBar;
     Database loginDb;
+    IP4V link;
+    HashMap<String, String> ip;
 
+
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +44,7 @@ public class LogInActivity extends AppCompatActivity {
         loginDb = new Database(this);
         pBar = findViewById(R.id.progress);
         pBar.setVisibility(View.INVISIBLE);
+        link = new IP4V(getApplicationContext());
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +60,54 @@ public class LogInActivity extends AppCompatActivity {
                 }
             }
         });
+       settingBtn = findViewById(R.id.url_destinationBtn);
+
+       settingBtn.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               final Dialog dialogContractor = new Dialog(LogInActivity.this);
+               dialogContractor.setContentView(R.layout.url_options);
+               dialogContractor.setCancelable(true);
+               // initial
+               Button cancelBtn;
+               cancelBtn = (Button) dialogContractor.findViewById(R.id.cancel_url);
+               final Button urlBtn = dialogContractor.findViewById(R.id.ok_url_entry);
+               final EditText urtText = (EditText) dialogContractor.findViewById(R.id.url_entry);
+               //get url in db
+               ip = link.getIP();
+               final String URL = ip.get(link.KEY_URL);
+               urtText.setText(URL);
+
+               // Save Event
+               urlBtn.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View v) {
+                       if (urlBtn.getText().toString().equals("")) {
+
+                       } else {
+                           final String urlText = urtText.getText().toString();
+                           link.add_KEYURL(urlText);
+                           Toast.makeText(getApplicationContext(), "@string/updateURL", Toast.LENGTH_SHORT).show();
+                           dialogContractor.dismiss();
+                       }
+                   }
+               });
+
+               // Cancel
+               cancelBtn.setOnClickListener(new View.OnClickListener() {
+                   @Override
+                   public void onClick(View v) {
+                       dialogContractor.dismiss();
+                   }
+               });
+               dialogContractor.show();
+           };
+       });
+
+    };
+
     }
+
 
     //To be majorly edited by uncle google, as this is just a basic design
     //Also if you don't like the progress bar, just delete it. It's in activity_log_in.xml.
@@ -150,4 +211,4 @@ public class LogInActivity extends AppCompatActivity {
 
     */
 
-}
+

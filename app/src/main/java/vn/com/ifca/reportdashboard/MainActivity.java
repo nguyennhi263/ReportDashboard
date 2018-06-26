@@ -1,7 +1,8 @@
 package vn.com.ifca.reportdashboard;
 
 import android.app.Dialog;
-import android.content.SharedPreferences;
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,29 +16,27 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
+import vn.com.ifca.reportdashboard.Activities.LogInActivity;
 import vn.com.ifca.reportdashboard.Model.IP4V;
-import android.content.res.Configuration;
+import vn.com.ifca.reportdashboard.Model.LanguagePf;
 import android.content.res.Resources;
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     IP4V link;
     HashMap<String, String> ip;
-    private SharedPreferences langPreferences;
-    private String sharedPrefFile = "vn.com.ifca.reportdashboard";
-    private String currentLocale;
+    Context context;
+    LanguagePf lang;
+    Resources res;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        langPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
-        String setLang = langPreferences.getString("language", "toast");
-        if (!(setLang.equals("toast"))){
-            Resources res = this.getResources();
-            changeLanguage(res, setLang);
-        }
+        lang = new LanguagePf();
+        res = this.getResources();
+        context = MainActivity.this;
+        lang.initialize(context, res);
         link = new IP4V(getApplicationContext());
-
+       // startActivity(new Intent(this, LogInActivity.class));
 
     }
 
@@ -62,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             // action with ID action_settings was
             case R.id.nav_language:
-                final Resources res = this.getResources();
                 final Dialog languageContractor = new Dialog(MainActivity.this);
                 languageContractor.setContentView(R.layout.language_options);
                 languageContractor.setCancelable(true);
@@ -70,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 final Button okBtn = languageContractor.findViewById(R.id.confirm_language);
                 final RadioButton english = languageContractor.findViewById(R.id.english_language_option);
                 final RadioButton viet = languageContractor.findViewById(R.id.vietnamese_language_option);
+                if (lang.getPreferences().equals("en")) english.toggle();
+                else viet.toggle();
                 okBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -77,12 +77,19 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "@string/languageWarning", Toast.LENGTH_SHORT).show();
                         }
                         else if (english.isChecked()) {
-                            changeLanguage(res, "en");
+                            lang.changeLanguage(res, "en");
+                            lang.updatePreferences("en");
+
                             languageContractor.dismiss();
+                            finish();
+                            startActivity(getIntent());
                         }
                         else {
-                            changeLanguage(res, "vi");
+                            lang.changeLanguage(res, "vi");
+                            lang.updatePreferences("vi");
                             languageContractor.dismiss();
+                            finish();
+                            startActivity(getIntent());
                         }
                         }
 
@@ -95,10 +102,8 @@ public class MainActivity extends AppCompatActivity {
                             languageContractor.dismiss();
                         }
                     });
-
                 languageContractor.show();
                 break;
-
                 case R.id.nav_url:
                     final Dialog dialogContractor = new Dialog(MainActivity.this);
                     dialogContractor.setContentView(R.layout.url_options);
@@ -148,22 +153,5 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
         }
-        public void changeLanguage (Resources res, String locale)
-        {
-            Configuration config = new Configuration(res.getConfiguration());
-            switch(locale) {
-                case "en":
-                    config.locale = new Locale("en");
-                    break;
-                case "vi":
-                    config.locale = new Locale("vi");
-                    break;
-            }
-            SharedPreferences.Editor preferencesEditor = langPreferences.edit();
-            preferencesEditor.clear();
-            preferencesEditor.putString("language", locale);
-            preferencesEditor.apply();
-            res.updateConfiguration(config, res.getDisplayMetrics());
 
-        }
     }

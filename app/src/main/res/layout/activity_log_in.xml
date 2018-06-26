@@ -7,7 +7,7 @@
     android:background="@color/Black">
 
     <ImageButton
-        android:id="@+id/url_destination"
+        android:id="@+id/url_destinationBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
