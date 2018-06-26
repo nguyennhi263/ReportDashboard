@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 import vn.com.ifca.reportdashboard.MainActivity;
 import vn.com.ifca.reportdashboard.Model.Database;
@@ -37,7 +38,12 @@ public class LogInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // hide support bar
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_log_in);
+        /*
+        *   Initial
+        * */
         user = findViewById(R.id.txtUsername);
         pass = findViewById(R.id.txtPassword);
         LoginBtn = findViewById(R.id.LoginBtn);
@@ -45,6 +51,10 @@ public class LogInActivity extends AppCompatActivity {
         pBar = findViewById(R.id.progress);
         pBar.setVisibility(View.INVISIBLE);
         link = new IP4V(getApplicationContext());
+        settingBtn = findViewById(R.id.url_destinationBtn);
+        /*
+        *   Event
+        * */
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,7 +70,7 @@ public class LogInActivity extends AppCompatActivity {
                 }
             }
         });
-       settingBtn = findViewById(R.id.url_destinationBtn);
+
 
        settingBtn.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -75,7 +85,7 @@ public class LogInActivity extends AppCompatActivity {
                final EditText urtText = (EditText) dialogContractor.findViewById(R.id.url_entry);
                //get url in db
                ip = link.getIP();
-               final String URL = ip.get(link.KEY_URL);
+               String URL = ip.get(link.KEY_URL);
                urtText.setText(URL);
 
                // Save Event
@@ -106,7 +116,7 @@ public class LogInActivity extends AppCompatActivity {
 
     };
 
-    }
+}
 
 
     //To be majorly edited by uncle google, as this is just a basic design

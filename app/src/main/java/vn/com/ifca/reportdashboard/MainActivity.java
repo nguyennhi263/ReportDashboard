@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         context = MainActivity.this;
         lang.initialize(context, res);
         link = new IP4V(getApplicationContext());
-       // startActivity(new Intent(this, LogInActivity.class));
+        startActivity(new Intent(this, LogInActivity.class));
 
     }
 

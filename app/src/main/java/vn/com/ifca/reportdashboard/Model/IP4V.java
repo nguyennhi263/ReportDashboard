@@ -23,7 +23,7 @@ public class IP4V {
     int PRIVATE_MODE = 0;
 
     // Sharedpref file name
-    private static final String PREF_NAME = "TestAPI";
+    private static final String PREF_NAME = "IFCA_Report_DashBoard";
     public static final String KEY_URL ="IP_POST";
     // Constructor
     public IP4V(Context context){
