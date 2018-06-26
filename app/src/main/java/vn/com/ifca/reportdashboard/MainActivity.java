@@ -16,6 +16,8 @@ import android.widget.Toast;
 import java.util.HashMap;
 
 import vn.com.ifca.reportdashboard.Model.IP4V;
+import vn.com.ifca.reportdashboard.Model.LanguagePf;
+
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import java.util.Locale;
@@ -25,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     HashMap<String, String> ip;
     private SharedPreferences langPreferences;
     private String sharedPrefFile = "vn.com.ifca.reportdashboard";
-    private String currentLocale;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +34,9 @@ public class MainActivity extends AppCompatActivity {
         langPreferences = getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
         String setLang = langPreferences.getString("language", "toast");
         if (!(setLang.equals("toast"))){
+            LanguagePf changeLang = new LanguagePf();
             Resources res = this.getResources();
-            changeLanguage(res, setLang);
+            changeLang.changeLanguage(res, setLang);
         }
         link = new IP4V(getApplicationContext());
 
@@ -62,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             // action with ID action_settings was
             case R.id.nav_language:
+                final LanguagePf changeLang = new LanguagePf();
                 final Resources res = this.getResources();
                 final Dialog languageContractor = new Dialog(MainActivity.this);
                 languageContractor.setContentView(R.layout.language_options);
@@ -77,11 +80,19 @@ public class MainActivity extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "@string/languageWarning", Toast.LENGTH_SHORT).show();
                         }
                         else if (english.isChecked()) {
-                            changeLanguage(res, "en");
+                            changeLang.changeLanguage(res, "en");
+                            SharedPreferences.Editor preferencesEditor=langPreferences.edit();
+                            preferencesEditor.clear();
+                            preferencesEditor.putString("language", "en");
+                            preferencesEditor.apply();
                             languageContractor.dismiss();
                         }
                         else {
-                            changeLanguage(res, "vi");
+                            changeLang.changeLanguage(res, "vi");
+                            SharedPreferences.Editor preferencesEditor=langPreferences.edit();
+                            preferencesEditor.clear();
+                            preferencesEditor.putString("language", "en");
+                            preferencesEditor.apply();
                             languageContractor.dismiss();
                         }
                         }
@@ -148,22 +159,5 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
         }
-        public void changeLanguage (Resources res, String locale)
-        {
-            Configuration config = new Configuration(res.getConfiguration());
-            switch(locale) {
-                case "en":
-                    config.locale = new Locale("en");
-                    break;
-                case "vi":
-                    config.locale = new Locale("vi");
-                    break;
-            }
-            SharedPreferences.Editor preferencesEditor = langPreferences.edit();
-            preferencesEditor.clear();
-            preferencesEditor.putString("language", locale);
-            preferencesEditor.apply();
-            res.updateConfiguration(config, res.getDisplayMetrics());
 
-        }
     }
