@@ -24,14 +24,13 @@
             android:text="Graph Title"
             android:textColor="@color/White"
             android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_weight="1"/>
+            android:textStyle="bold"/>
 
         <ImageView
             android:id="@+id/graph1_display"
             android:layout_width="match_parent"
             android:layout_height="255dp"
-            android:layout_weight="15"
+            android:layout_weight="16"
             android:background="@drawable/sample_graph1" />
 
         <LinearLayout
