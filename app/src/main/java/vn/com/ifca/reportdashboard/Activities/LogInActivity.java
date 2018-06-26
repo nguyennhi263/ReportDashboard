@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -25,7 +26,7 @@ public class LogInActivity extends AppCompatActivity {
     private CardView LoginBtn;
     private String username;
     private String password;
-    private Button settingBtn;
+    private ImageButton settingBtn;
     ProgressBar pBar;
     Database loginDb;
     IP4V link;

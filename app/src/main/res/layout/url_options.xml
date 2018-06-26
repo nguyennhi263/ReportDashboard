@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:minWidth="270dp"
     android:background="@color/Black">
 
     <LinearLayout
@@ -25,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/url"
                 android:textSize="14sp"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:textStyle="bold"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
