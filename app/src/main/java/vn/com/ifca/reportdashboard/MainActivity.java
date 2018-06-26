@@ -2,6 +2,7 @@ package vn.com.ifca.reportdashboard;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 
+import vn.com.ifca.reportdashboard.Activities.LogInActivity;
 import vn.com.ifca.reportdashboard.Model.IP4V;
 import vn.com.ifca.reportdashboard.Model.LanguagePf;
 import android.content.res.Resources;
@@ -34,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         context = MainActivity.this;
         lang.initialize(context, res);
         link = new IP4V(getApplicationContext());
-
+       // startActivity(new Intent(this, LogInActivity.class));
 
     }
 
@@ -79,11 +81,15 @@ public class MainActivity extends AppCompatActivity {
                             lang.updatePreferences("en");
 
                             languageContractor.dismiss();
+                            finish();
+                            startActivity(getIntent());
                         }
                         else {
                             lang.changeLanguage(res, "vi");
                             lang.updatePreferences("vi");
                             languageContractor.dismiss();
+                            finish();
+                            startActivity(getIntent());
                         }
                         }
 
@@ -96,10 +102,8 @@ public class MainActivity extends AppCompatActivity {
                             languageContractor.dismiss();
                         }
                     });
-
                 languageContractor.show();
                 break;
-
                 case R.id.nav_url:
                     final Dialog dialogContractor = new Dialog(MainActivity.this);
                     dialogContractor.setContentView(R.layout.url_options);
