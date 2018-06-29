@@ -16,4 +16,5 @@
     <string name="logInToastPassword">Enter your password!</string>
     <string name="logInSuccess">Hello </string>
     <string name="updateURL">Updated URL</string>
+    <string name="propertyReport">Property Sale Report</string>
 </resources>

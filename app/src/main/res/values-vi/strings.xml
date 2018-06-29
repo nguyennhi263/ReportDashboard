@@ -11,6 +11,7 @@
     <string name="menuDashboard">Báo cáo</string>
     <string name="menuLanguage">Ngôn ngữ</string>
     <string name="menuLogOut">Đăng xuất</string>
+    <string name="propertyReport">Báo cáo bán bất động sản</string>
 
 
 </resources>
